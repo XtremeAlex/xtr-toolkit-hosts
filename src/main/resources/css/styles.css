@@ -1,0 +1,129 @@
+
+.root {
+    -fx-font-family: "Overpass-Light";
+    -fx-font-smoothing-type: gray;
+    -fx-background-color: #F9F9F9;
+}
+
+/* Title Label */
+.title-label {
+    -fx-font-weight: bold;
+}
+
+/* Author Label */
+.author-label {
+    -fx-text-fill: #000000;
+}
+
+/* Contorno contenuto */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 5px;
+}
+
+.scroll-bar:vertical .track-background, .scroll-bar:horizontal .track-background {
+    -fx-background-color: #E0E0E0;
+}
+
+.scroll-bar:vertical .thumb, .scroll-bar:horizontal .thumb {
+    -fx-background-color: #BCBCBC;
+    -fx-background-radius: 5px;
+}
+
+/* VBox Styling */
+.vbox {
+    -fx-spacing: 10; /* Spaziatura tra gli elementi */
+    -fx-padding: 10px;
+}
+
+/* HBox Styling */
+.hbox {
+    -fx-spacing: 15; /* Spaziatura più larga per HBox */
+    -fx-padding: 10px;
+}
+
+/* Label Styling */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+    -fx-font-weight: normal;
+}
+
+/* Personalizzazione per il JFXToggleButton */
+.custom-jfx-toggle-button {
+    -jfx-toggle-color: #4cd864;      /* Colore quando è attivo (ON) */
+    -jfx-untoggle-color: #ff0000;    /* Colore quando è inattivo (OFF) */
+    -jfx-untoggle-line-color: #ffa19e;
+    /* -jfx-toggle-line-color: black;    /* Colore della linea del toggle */
+
+    -jfx-toggle-size: 30px;          /* Dimensione dell'ovale del toggle */
+    -fx-pref-width: 100px;           /* Larghezza del pulsante */
+    -fx-pref-height: 50px;           /* Altezza del pulsante */
+}
+
+.custom-jfx-toggle-button .thumb {
+    -fx-background-color: white; /* Pallina bianca */
+    -fx-background-radius: 50%; /* Forma rotonda */
+    -fx-pref-width: 30px;
+    -fx-pref-height: 30px;
+    -fx-translate-x: 5px; /* Posizione iniziale a sinistra */
+    -fx-transition: .3s; /* Animazione di transizione */
+}
+
+.custom-jfx-toggle-button:selected .thumb {
+    -fx-translate-x: 35px; /* Sposta a destra quando selezionato */
+}
+
+.custom-jfx-toggle-button:focused {
+    /*   -fx-background-color: #ffffff; */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0), 5, 0, 0, 1);
+}
+
+.custom-jfx-toggle-button:disabled {
+    -jfx-toggle-color: #E0E0E0;
+    -jfx-untoggle-color: #8d8d8d;
+    -jfx-toggle-line-color: #3f3f3f;
+    -fx-opacity: 0.7;
+}
+
+.hbox .custom-jfx-toggle-button {
+    -fx-alignment: center-left;
+    -fx-padding: 5px 10px;
+}
+
+/* transitions per smooth effect */
+.custom-jfx-toggle-button .thumb {
+    -fx-transition: translate 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.custom-jfx-toggle-button:selected .thumb {
+    -fx-translate-x: 40px;
+}
+
+.delete-button {
+    -fx-background-color: #f44336;
+    -fx-text-fill: white;
+}
+
+.jfx-button {
+    -jfx-button-type: RAISED;
+    -fx-background-color: #000000;
+    -fx-text-fill: white;
+}
+
+.salva-jfx-toggle-button{
+    -fx-background-color: #6de86d;
+    -fx-text-fill: #000000;
+}
+
+
+/* Splash Screen
+.splash-screen {
+    -fx-background-color: #000000;
+}
+
+.splash-screen .label {
+    -fx-text-fill: #FFFFFF;
+}
+*/
