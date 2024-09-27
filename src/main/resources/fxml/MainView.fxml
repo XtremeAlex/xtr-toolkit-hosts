@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ListView?>
+<StackPane fx:id="rootPane" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21.0.4-ea+1"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.xtremealex.toolkit.hosts.mvp.controllers.impl.MainViewControllerImpl">
+
+    <fx:define>
+        <Font fx:id="titleFont" name="Arial" size="48"/>
+        <Font fx:id="authorFont" name="Arial" size="24"/>
+    </fx:define>
+
+    <!-- Splash Screen -->
+    <Pane fx:id="splashScreen" prefHeight="860" prefWidth="640" styleClass="splash-screen">
+        <children>
+            <AnchorPane prefHeight="860" prefWidth="640">
+                <VBox alignment="CENTER" spacing="10" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0"
+                      AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+                    <Label font="${titleFont}" styleClass="title-label" text="XTR HOST"/>
+                    <Label font="${authorFont}" styleClass="author-label" text="by XtremeAlex"/>
+                </VBox>
+            </AnchorPane>
+        </children>
+    </Pane>
+
+    <!-- Contenuto Principale -->
+    <AnchorPane fx:id="mainContent" visible="false">
+        <children>
+            <!-- Sezione Superiore -->
+            <VBox spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <!-- Titolo e Autore a sinistra -->
+                    <VBox spacing="1">
+                        <HBox spacing="1">
+                            <Label text="XTR TOOLKIT HOST" style="-fx-font-size: 35px; -fx-text-fill: black;"/>
+                        </HBox>
+                        <Label text="by XtremeAlex" style="-fx-font-size: 15px; -fx-text-fill: #333333;"/>
+                    </VBox>
+
+                    <!-- Spaziatore per allineare gli elementi -->
+                    <Region HBox.hgrow="ALWAYS"/>
+
+                    <!-- Sezione Musica e Modifica a destra -->
+                    <VBox spacing="10" alignment="TOP_RIGHT">
+                        <HBox alignment="CENTER_RIGHT" spacing="10">
+                            <Label text="MUSICA" style="-fx-font-size: 16px; -fx-text-fill: black;"/>
+                            <JFXToggleButton fx:id="musicToggleButton" prefHeight="58.0"
+                                             prefWidth="182.0" selected="true" styleClass="custom-jfx-toggle-button"/>
+                        </HBox>
+                        <HBox fx:id="editButtonsBox" alignment="CENTER_RIGHT" spacing="5">
+                            <JFXButton fx:id="addAppButton" text="Aggiungi" onAction="#handleAddAppAction"/>
+                            <JFXButton fx:id="modifyButton" text="Modifica" onAction="#handleModifyAction"/>
+                            <JFXButton fx:id="cancelButton" text="Annulla" onAction="#handleCancelEdit" visible="false"/>
+                            <JFXButton fx:id="saveButton" text="Salva" onAction="#handleSaveEdit" visible="false"/>
+                        </HBox>
+                    </VBox>
+                </HBox>
+
+
+            </VBox>
+
+            <!-- Sezione Centrale -->
+            <VBox fx:id="mainLayout" spacing="10" AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10"
+                  AnchorPane.rightAnchor="10" AnchorPane.topAnchor="100">
+                <padding>
+                    <Insets bottom="10" left="1" right="1" top="10"/>
+                </padding>
+
+                <ListView fx:id="appsListView" VBox.vgrow="ALWAYS"/>
+            </VBox>
+        </children>
+    </AnchorPane>
+
+</StackPane>
