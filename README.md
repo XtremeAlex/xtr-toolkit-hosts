@@ -50,7 +50,7 @@ Grazie a tutti quelli che hanno o vorranno contribuire ad espandere qusto proget
 <!-- GETTING STARTED -->
 ## Getting Started
 Questo progetto è configurato per usare Maven per la gestione delle dipendenze e la compilazione.
-È sviluppato con Spring 3 e Java 17 e può essere facilmente avviato e testato in un ambiente locale.
+È sviluppato con Java 17 e JavaFX e può essere facilmente avviato e testato in un ambiente locale.
 
 ### Prerequisiti
 Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:
