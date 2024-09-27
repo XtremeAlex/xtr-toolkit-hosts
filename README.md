@@ -166,6 +166,8 @@ Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:
 3. Ora puoi avviarlo eseguendo:
    ```
    java -jar ./target/jpackage si troverà l'eseguibile
+   
+   RICORDARSI DI INSERIRE LA STRINGA : ##start-xtr-toolkit-host che sta ad indicare il punto da cui iniziare a leggere
    ```
    
 <!-- ROADMAP -->
