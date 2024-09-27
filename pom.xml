@@ -380,11 +380,11 @@
             </build>
         </profile>
 
-        <!-- Profilo per x86 (windows) "mvn clean package jpackage:jpackage -Pwindows" NON TESTATO-->
+        <!-- Profilo per x86 (windows) "mvn clean package jpackage:jpackage -Pwindows"-->
         <profile>
             <id>windows</id>
             <properties>
-                <imageType>EXE</imageType>
+                <imageType>APP_IMAGE</imageType>
             </properties>
             <build>
                 <plugins>
@@ -402,9 +402,6 @@
                         </executions>
                         <configuration>
                             <type>${imageType}</type>
-                            <javaOptions>
-                                <javaOption>--win-console</javaOption>
-                            </javaOptions>
                         </configuration>
                     </plugin>
                 </plugins>
