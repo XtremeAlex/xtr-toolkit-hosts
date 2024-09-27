@@ -4,7 +4,8 @@
 <br />
 <div align="center">
   <a href="">
-    <img src="_assets/images/logo.png" width="300" alt="Logo">
+    <img src="_assets/images/logo01.png" width="300" alt="Logo">
+    <img src="_assets/images/logo02.png" width="300" alt="Logo">
   </a>
 
   <h3 align="center">XTR-TOOLKIT-HOSTS</h3>
