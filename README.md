@@ -27,8 +27,6 @@
 <!-- ABOUT THE PROJECT -->
 ## Info sul progetto
 
-[![Product Name Screen Shot][product-screenshot]]()
-
 Durante il poco tempo che riesco a strappare al lavoro e agli altri impegni, mi diverto a sperimentare con tecnologie e nuovi framework, e questa ne è una piccola dimostrazione.
 Questo è solo uno dei numerosi moduli che prevedo di rilasciare, con l'intento di condividerli e arricchirli attraverso il contributo della community.
 
@@ -143,8 +141,6 @@ Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:
     │           └── background.wav
     └── test
         └── java
-
-```
 
 ```
 
