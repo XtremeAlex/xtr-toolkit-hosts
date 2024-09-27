@@ -169,6 +169,14 @@ Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:
    
    RICORDARSI DI INSERIRE LA STRINGA : ##start-xtr-toolkit-host , nel file host, sta ad indicare il punto da cui iniziare a leggere
    ```
+
+   Gerarchia File Host
+   ```
+   #TEST CLOUD
+   #APP: TEST KIBANA COLL
+   #LB: test.amazonaws.com
+   0.0.0.0 test.it
+   ```
    
 <!-- ROADMAP -->
 ## Roadmap
