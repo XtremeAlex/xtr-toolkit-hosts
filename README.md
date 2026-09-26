@@ -1,242 +1,143 @@
 <a name="readme-top"></a>
 
-<!-- PROJECT LOGO -->
-<br />
 <div align="center">
-  <a href="">
-    <img src="_assets/images/logo01.png" width="300" alt="Logo">
-    <img src="_assets/images/logo02.png" width="300" alt="Logo">
-  </a>
-
-  <h3 align="center">XTR-TOOLKIT-HOSTS</h3>
-
-  <p align="center">
-   **xtr-toolkit-hosts** è un servizio dedicato alla modifica del file di host in caso si lavori con multipli host.
-    <br />
-    <a href="https://github.com/XtremeAlex/xtr-toolkit-hosts"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href=""></a>
-    ·
-    <a href="/issues">Report Bug</a>
-    ·
-    <a href="/issues">Request Feature</a>
-  </p>
+  <img src="_assets/images/logo01.png" width="300" alt="Logo">
+  <img src="_assets/images/logo02.png" width="300" alt="Logo">
 </div>
 
+# xtr-toolkit-hosts
 
-<!-- ABOUT THE PROJECT -->
+Applicazione desktop JavaFX per gestire e modificare il file `hosts` quando si lavora con molteplici host e ambienti.
+
 ## Info sul progetto
 
-Durante il poco tempo che riesco a strappare al lavoro e agli altri impegni, mi diverto a sperimentare con tecnologie e nuovi framework, e questa ne è una piccola dimostrazione.
-Questo è solo uno dei numerosi moduli che prevedo di rilasciare, con l'intento di condividerli e arricchirli attraverso il contributo della community.
+Questo progetto nasce come piattaforma sperimentale personale per mettere alla prova tecnologie e framework moderni in un contesto realistico. Semplifica la modifica del file `hosts` raggruppando gli host per applicazione/ambiente tramite un'interfaccia grafica.
 
+È uno dei moduli di una serie più ampia, pensata per essere condivisa e arricchita con il contributo della community.
 
-### Invito alla Collaborazione
-Il contributo di idee, codice e feedback è sempre benvenuto e incoraggiato per diversi motivi:
-* Sperimentare con Nuove Tecnologie
-  * Questo progetto mette alla prova le proprie competenze in un contesto realistico.
-* Crescita Collettiva
-  * Collaborando, possiamo imparare gli uni dagli altri, scambiare idee e crescere professionalmente insieme.
-* Base per Sviluppi Futuri
-  * Il progetto è strutturato seguendo le best practice, rendendolo un ottimo punto di partenza per i tuoi sviluppi futuri.
-  * L'approccio "Enterprise Like" garantisce che le soluzione sia di alta qualità e pronta per l'uso in contesti aziendali.
+## Stack tecnologico
 
-Grazie a tutti quelli che hanno o vorranno contribuire ad espandere qusto progetto.
+- Java 17
+- JavaFX 21
+- Maven (jpackage)
+- Linux, macOS, Windows
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<!-- GETTING STARTED -->
 ## Getting Started
-Questo progetto è configurato per usare Maven per la gestione delle dipendenze e la compilazione.
-È sviluppato con Java 17 e JavaFX e può essere facilmente avviato e testato in un ambiente locale.
+
+Il progetto usa Maven per la gestione delle dipendenze e la compilazione. È sviluppato con Java 17 e JavaFX e può essere avviato e testato in locale.
 
 ### Prerequisiti
-Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:
-- Git (2.43.0)
-- Java OJDK (Graal Versione 17)
-- Maven (Apache Maven 3.9.6)
-- JAVAFX 21
 
-**Contenent**
+- Git (>= 2.43)
+- Java OJDK (GraalVM versione 17)
+- Maven (Apache Maven >= 3.9.6)
+- JavaFX 21
+
+### Struttura del progetto
 
 ```
 .
 ├── pom.xml
 └── src
     ├── main
-    │   ├── java
-    │   │   └── com
-    │   │       └── xtremealex
-    │   │           └── toolkit
-    │   │               └── hosts
-    │   │                   ├── IOHostParser.java
-    │   │                   ├── MainHostsApp.java
-    │   │                   ├── models
-    │   │                   │   ├── App.java
-    │   │                   │   ├── Host.java
-    │   │                   │   └── HostType.java
-    │   │                   └── mvp
-    │   │                       ├── MusicPlayer.java
-    │   │                       ├── controllers
-    │   │                       │   ├── AppCell.java
-    │   │                       │   ├── HostEditCell.java
-    │   │                       │   ├── HostListCell.java
-    │   │                       │   ├── IMainViewController.java
-    │   │                       │   ├── ModalController.java
-    │   │                       │   └── impl
-    │   │                       │       └── MainViewControllerImpl.java
-    │   │                       └── views
-    │   │                           └── presenter
-    │   │                               ├── IMainPresenter.java
-    │   │                               └── impl
-    │   │                                   └── MainPresenterImpl.java
-    │   └── resources
-    │       ├── css
-    │       │   └── styles.css
-    │       ├── fonts
-    │       │   ├── Comfortaa
-    │       │   │   ├── Comfortaa-Bold.ttf
-    │       │   │   ├── Comfortaa-Light.ttf
-    │       │   │   ├── Comfortaa-Medium.ttf
-    │       │   │   ├── Comfortaa-Regular.ttf
-    │       │   │   ├── Comfortaa-SemiBold.ttf
-    │       │   │   └── Comfortaa.css
-    │       │   ├── Fonts.css
-    │       │   ├── OpenSans
-    │       │   │   ├── OpenSans-Bold.ttf
-    │       │   │   ├── OpenSans-BoldItalic.ttf
-    │       │   │   ├── OpenSans-ExtraBold.ttf
-    │       │   │   ├── OpenSans-ExtraBoldItalic.ttf
-    │       │   │   ├── OpenSans-Italic.ttf
-    │       │   │   ├── OpenSans-Light.ttf
-    │       │   │   ├── OpenSans-LightItalic.ttf
-    │       │   │   ├── OpenSans-Regular.ttf
-    │       │   │   ├── OpenSans-SemiBold.ttf
-    │       │   │   ├── OpenSans-SemiBoldItalic.ttf
-    │       │   │   └── OpenSans.css
-    │       │   ├── Overpass
-    │       │   │   ├── Overpass-Light.ttf
-    │       │   │   ├── Overpass-Regular.ttf
-    │       │   │   └── Overpass-VariableFont_wght.ttf
-    │       │   └── Roboto
-    │       │       ├── Roboto-Black.ttf
-    │       │       ├── Roboto-BlackItalic.ttf
-    │       │       ├── Roboto-Bold.ttf
-    │       │       ├── Roboto-BoldItalic.ttf
-    │       │       ├── Roboto-Italic.ttf
-    │       │       ├── Roboto-Light.ttf
-    │       │       ├── Roboto-LightItalic.ttf
-    │       │       ├── Roboto-Medium.ttf
-    │       │       ├── Roboto-MediumItalic.ttf
-    │       │       ├── Roboto-Regular.ttf
-    │       │       ├── Roboto-Thin.ttf
-    │       │       ├── Roboto-ThinItalic.ttf
-    │       │       ├── Roboto.css
-    │       │       └── RobotoMono-VariableFont_wght.ttf
-    │       ├── fxml
-    │       │   └── MainView.fxml
-    │       ├── images
-    │       └── music
-    │           └── background.wav
+    │   ├── java
+    │   │   └── com
+    │   │       └── xtremealex
+    │   │           └── toolkit
+    │   │               └── hosts
+    │   │                   ├── IOHostParser.java
+    │   │                   ├── MainHostsApp.java
+    │   │                   ├── models
+    │   │                   │   ├── App.java
+    │   │                   │   ├── Host.java
+    │   │                   │   └── HostType.java
+    │   │                   └── mvp
+    │   │                       ├── MusicPlayer.java
+    │   │                       ├── controllers
+    │   │                       │   ├── AppCell.java
+    │   │                       │   ├── HostEditCell.java
+    │   │                       │   ├── HostListCell.java
+    │   │                       │   ├── IMainViewController.java
+    │   │                       │   ├── ModalController.java
+    │   │                       │   └── impl
+    │   │                       │       └── MainViewControllerImpl.java
+    │   │                       └── views
+    │   │                           └── presenter
+    │   │                               ├── IMainPresenter.java
+    │   │                               └── impl
+    │   │                                   └── MainPresenterImpl.java
+    │   └── resources
+    │       ├── css
+    │       │   └── styles.css
+    │       ├── fonts
+    │       │   ├── Comfortaa
+    │       │   ├── OpenSans
+    │       │   ├── Overpass
+    │       │   └── Roboto
+    │       ├── fxml
+    │       │   └── MainView.fxml
+    │       ├── images
+    │       └── music
+    │           └── background.wav
     └── test
         └── java
-
 ```
 
-### Compilazione
+### Clonare e compilare
 
-**Clonare il Repository**
-
-1. Per iniziare, clona il repository `xtr-toolkit-hosts` sul tuo computer locale usando Git.
-   Apri il terminale e esegui il seguente comando:
-   ```
-   git clone https://<repository>/xtr-toolkit-hosts.git cd
-   xtr-toolkit-hosts
+1. Clona il repository:
+   ```bash
+   git clone https://github.com/XtremeAlex/xtr-toolkit-hosts.git
+   cd xtr-toolkit-hosts
    ```
 
-2. Una volta clonato il repository, puoi compilare il progetto utilizzando Maven.
-   Esegui il seguente comando nella directory radice del progetto:
-   ```
-   mvn clean package jpackage:jpackage -Pmac-aarch64  OR mvn clean package jpackage:jpackage -Pwindows
-   ```
-   <img src="_assets/images/mvn-build.png" alt="_assets/images/mvn-build.png"/>
+2. Compila e crea l'eseguibile con jpackage (profilo per architettura):
+   ```bash
+   # macOS (Apple Silicon)
+   mvn clean package jpackage:jpackage -Pmac-aarch64
 
-3. Ora puoi avviarlo eseguendo:
+   # Windows
+   mvn clean package jpackage:jpackage -Pwindows
    ```
-   java -jar ./target/jpackage si troverà l'eseguibile
-   
-   RICORDARSI DI INSERIRE LA STRINGA : ##start-xtr-toolkit-host , nel file host, sta ad indicare il punto da cui iniziare a leggere
-   ```
+   <img src="_assets/images/mvn-build.png" alt="Build Maven"/>
 
-   Gerarchia File Host
-   ```
-   #TEST CLOUD
-   #APP: TEST KIBANA COLL
-   #LB: test.amazonaws.com
-   0.0.0.0 test.it
-   ```
-   
-<!-- ROADMAP -->
+3. L'eseguibile viene prodotto sotto `./target/jpackage`.
+
+### Formato del file hosts
+
+Ricordarsi di inserire la stringa `##start-xtr-toolkit-host` nel file `hosts`: indica il punto da cui iniziare la lettura.
+
+Gerarchia di esempio (usa placeholder al posto di host reali):
+
+```
+#TEST CLOUD
+#APP: TEST KIBANA COLL
+#LB: <hostname>
+0.0.0.0 <dominio>
+```
+
 ## Roadmap
-- [ ] Testare il tutto riportando 
 
-Consulta [open issues](https://github.com/XtremeAlex/xtr-toolkit-hosts/issues) per una lista completa delle funzionalità proposte (bug e feature).
-s
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- [ ] Testare il tutto riportando i risultati
 
+Consulta le [open issues](https://github.com/XtremeAlex/xtr-toolkit-hosts/issues) per la lista completa di funzionalità proposte e bug noti.
 
-<!-- CONTRIBUTING -->
-## Aiutami
+## Come contribuire
 
-L'aiuto di tutti rende la comunità open source un luogo incredibile per imparare, ispirarsi e creare.
-Qualsiasi contributo tu possa fornire è **enormemente apprezzato**.
+I contributi sono ciò che rende la community open source un posto straordinario per imparare e creare. Ogni contributo è molto apprezzato.
 
-Se hai un suggerimento che potrebbe migliorare questo progetto, per favore effettua un fork del repository e crea una pull request.
-Puoi anche semplicemente aprire un problema con il tag "bug".
+1. Fai un fork del progetto
+2. Crea il tuo feature branch (`git checkout -b feature/nome-feature`)
+3. Fai commit delle modifiche (`git commit -m "Aggiunge nome-feature"`)
+4. Fai push sul branch (`git push origin feature/nome-feature`)
+5. Apri una Pull Request
 
-Non dimenticare di mettere una stella al progetto!
-Grazie ancora!
+Se hai un suggerimento, apri pure una issue con il tag appropriato. E non dimenticare di mettere una stella al progetto!
 
-
-
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create.
-Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "bug".
-
-Don't forget to give the project a star!
-Thanks again!
-
-## Git Command
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/SexToysFeature`)
-3. Commit your Changes (`git commit -m 'Add some SexToysFeature'`)
-4. Push to the Branch (`git push origin feature/SexToysFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
 ## License
 
-Distributed under the Apache License. See `LICENSE` for more information.
+Distribuito sotto licenza Apache 2.0. Vedi il file [`LICENSE`](LICENSE) per i dettagli.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Contatti
 
-
-<!-- CONTACT -->
-## Contact
-
-Andrei Alexandru Dabija - [@linkedin](https://www.linkedin.com/in/andrei-alexandru-dabija/) - /andrei-alexandru-dabija
-
-GitHub Link: [https://github.com/XtremeAlex](https://github.com/XtremeAlex)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+Andrei Alexandru Dabija — [LinkedIn](https://www.linkedin.com/in/andrei-alexandru-dabija/) — [github.com/XtremeAlex](https://github.com/XtremeAlex)
