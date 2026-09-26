@@ -1,0 +1,150 @@
+/* styles.css */
+
+/* Font e sfondo globale */
+.root {
+    -fx-font-family: 'Arial', sans-serif;
+    -fx-background-color: #000000; /* Cambiato da #FFFFFF a #000000 */
+}
+
+/* Rimuovi bordi e sfondi dai contenitori */
+.pane, .anchor-pane, .vbox, .hbox, .scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+
+}
+
+/* Etichette */
+.label {
+    -fx-text-fill: #000000;
+    -fx-font-size: 18px;
+}
+
+/* Stile per i pulsanti generici */
+.button {
+    -fx-background-color: #000000; /* Sfondo nero */
+    -fx-text-fill: #FFFFFF;        /* Testo bianco */
+    -fx-font-size: 16px;
+}
+
+.button:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.58);
+}
+
+/* Pulsanti Toggle */
+.toggle-button {
+    -fx-background-color: rgba(7, 7, 7, 0.58);
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 16px;
+}
+
+.toggle-button:hover {
+    -fx-background-color: rgba(7, 7, 7, 0.58);
+}
+
+/* Pulsanti ON/OFF per gli host */
+.toggle-button-on {
+    -fx-background-color: #81C784; /* Verde pastello */
+    -fx-text-fill: #000000;
+}
+
+.toggle-button-off {
+    -fx-background-color: #E57373; /* Rosso pastello */
+    -fx-text-fill: #FFFFFF;
+}
+
+/* Pulsante 'X' in modalità modifica */
+.delete-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: rgb(243, 7, 11);
+    -fx-font-size: 16px;
+}
+
+.delete-button:hover {
+    -fx-background-color: rgb(243, 7, 11);
+    -fx-text-fill: #ffffff;
+}
+
+/* Pulsante Musica ON/OFF */
+.music-toggle-button {
+    -fx-background-color: #E57373;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 16px;
+}
+
+.music-toggle-button:selected {
+    -fx-background-color: #000000; /* Verde pastello quando ON */
+    -fx-text-fill: #ffffff;
+}
+
+.music-toggle-button:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.58);
+}
+
+/* Splash Screen */
+.splash-screen {
+    -fx-background-color: #000000; /* Sfondo nero */
+}
+
+.splash-screen .label {
+    -fx-text-fill: #FFFFFF; /* Testo bianco */
+}
+.title-label {
+    -fx-text-fill: #FFFFFF;  /* Assicurati che il testo sia bianco */
+    -fx-font-size: 38px;
+    -fx-font-weight: bold;
+}
+
+
+/********************/
+.custom-toggle-button {
+    -fx-background-radius: 30; /* Arrotonda l'ovale */
+    -fx-pref-width: 90; /* Larghezza dell'ovale */
+    -fx-pref-height: 40; /* Altezza dell'ovale */
+    -fx-alignment: CENTER_LEFT; /* Allinea il pallino e il testo */
+    -fx-padding: 5;
+    -fx-content-display: LEFT;
+    -fx-text-fill: white; /* Colore del testo ON/OFF */
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-color: #E57373; /* Rosso pastello per OFF di default */
+    -fx-effect: dropshadow( gaussian , rgba(0, 0, 0, 0.25), 5, 0.5, 0, 1); /* Ombra per il pulsante */
+}
+
+/* Quando è selezionato (ON) */
+.custom-toggle-button:selected {
+    -fx-background-color: #81C784; /* Verde pastello per ON */
+}
+
+/* Testo per ON/OFF */
+.custom-toggle-button .text {
+    -fx-padding: 0 0 0 10px;
+    -fx-opacity: 1;
+    -fx-text-fill: white;
+}
+
+/* Pallino bianco per il toggle */
+.custom-toggle-button .mark {
+    -fx-background-color: white; /* Colore del pallino */
+    -fx-background-radius: 50%; /* Arrotondamento totale */
+    -fx-pref-width: 28px; /* Dimensione del pallino */
+    -fx-pref-height: 28px;
+    -fx-translate-x: 5; /* Posizione iniziale a sinistra */
+    -fx-effect: dropshadow( gaussian , rgba(0, 0, 0, 0.3), 5, 0.5, 0, 1); /* Ombra per il pallino */
+}
+
+/* Sposta il pallino a destra quando ON */
+.custom-toggle-button:selected > .mark {
+    -fx-translate-x: 55; /* Sposta il pallino a destra quando ON */
+}
+
+/* Hover effect: ingrandisce il pallino */
+.custom-toggle-button:hover .mark {
+    -fx-scale-x: 1.2; /* Aumenta leggermente la dimensione del pallino */
+    -fx-scale-y: 1.2;
+}
+
+/* Rimuove il contorno di focus */
+.custom-toggle-button:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
