@@ -1,0 +1,153 @@
+/* styles.css */
+
+/* Font e sfondo globale */
+.root {
+    -fx-font-family: 'Arial', sans-serif;
+    -fx-background-color: #000000; /* Cambiato da #FFFFFF a #000000 */
+}
+
+/* Rimuovi bordi e sfondi dai contenitori */
+.pane, .anchor-pane, .vbox, .hbox, .scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+
+}
+
+/* Etichette */
+.label {
+    -fx-text-fill: #000000;
+    -fx-font-size: 18px;
+}
+
+/* Stile per i pulsanti generici */
+.button {
+    -fx-background-color: #000000; /* Sfondo nero */
+    -fx-text-fill: #FFFFFF;        /* Testo bianco */
+    -fx-font-size: 16px;
+}
+
+.button:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.58);
+}
+
+/* Pulsanti Toggle */
+.toggle-button {
+    -fx-background-color: rgba(7, 7, 7, 0.58);
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 16px;
+}
+
+.toggle-button:hover {
+    -fx-background-color: rgba(7, 7, 7, 0.58);
+}
+
+/* Pulsanti ON/OFF per gli host */
+.toggle-button-on {
+    -fx-background-color: #81C784; /* Verde pastello */
+    -fx-text-fill: #000000;
+}
+
+.toggle-button-off {
+    -fx-background-color: #E57373; /* Rosso pastello */
+    -fx-text-fill: #FFFFFF;
+}
+
+/* Pulsante 'X' in modalità modifica */
+.delete-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: rgb(243, 7, 11);
+    -fx-font-size: 16px;
+}
+
+.delete-button:hover {
+    -fx-background-color: rgb(243, 7, 11);
+    -fx-text-fill: #ffffff;
+}
+
+/* Pulsante Musica ON/OFF */
+.music-toggle-button {
+    -fx-background-color: #E57373;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 16px;
+}
+
+.music-toggle-button:selected {
+    -fx-background-color: #000000; /* Verde pastello quando ON */
+    -fx-text-fill: #ffffff;
+}
+
+.music-toggle-button:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.58);
+}
+
+/* Splash Screen */
+.splash-screen {
+    -fx-background-color: #000000; /* Sfondo nero */
+}
+
+.splash-screen .label {
+    -fx-text-fill: #FFFFFF; /* Testo bianco */
+}
+.title-label {
+    -fx-text-fill: #FFFFFF;  /* Assicurati che il testo sia bianco */
+    -fx-font-size: 38px;
+    -fx-font-weight: bold;
+}
+
+
+/********************/
+/* Toggle button container */
+/* Stile per il JFXToggleButton in stile iOS */
+.ios-toggle-button {
+    -jfx-toggle-color: #4cd964; /* Colore verde di iOS quando attivo */
+    -jfx-untoggle-color: #ffffff; /* Colore bianco quando disattivato */
+    -jfx-toggle-line-color: transparent; /* Rimuovi la linea sottostante */
+    -jfx-animate-thumb: true; /* Anima il movimento del thumb */
+    -jfx-disable-visual-focus: true; /* Disabilita il focus visivo */
+}
+
+.ios-toggle-button .thumb {
+    -fx-background-color: white;
+    -fx-background-radius: 100%;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 2, 0, 0, 1);
+}
+
+.ios-toggle-button:selected .thumb {
+    -fx-translate-x: 16px; /* Sposta il thumb a destra quando selezionato */
+}
+
+.ios-toggle-button .track {
+    -fx-background-color: #d8d8d8; /* Colore della track */
+    -fx-background-radius: 100%;
+    -fx-pref-height: 28;
+    -fx-pref-width: 50;
+}
+
+.ios-toggle-button:selected .track {
+    -fx-background-color: #4cd964; /* Colore verde quando attivo */
+}
+
+/* il nuovo stile*/
+.mfx-toggle-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #FFFFFF;
+}
+
+.mfx-toggle-button .thumb {
+    -fx-background-color: white;
+}
+
+.mfx-toggle-button:selected .thumb {
+    -fx-translate-x: 22px;
+}
+
+.mfx-toggle-button .track {
+    -fx-background-color: #d8d8d8;
+    -fx-background-radius: 100%;
+    -fx-pref-height: 28;
+    -fx-pref-width: 50;
+}
+
+.mfx-toggle-button:selected .track {
+    -fx-background-color: #4cd964;
+}
