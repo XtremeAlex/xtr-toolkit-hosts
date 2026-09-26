@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<StackPane fx:id="rootPane" xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xtremealex.toolkit.hosts.MainController">
+
+    <fx:define>
+        <Font fx:id="titleFont" name="Arial" size="48"/>
+        <Font fx:id="authorFont" name="Arial" size="24"/>
+    </fx:define>
+
+    <!-- 1 Screen -->
+    <Pane fx:id="splashScreen" prefWidth="640" prefHeight="860" styleClass="splash-screen">
+        <children>
+            <AnchorPane prefWidth="640" prefHeight="860">
+                <VBox alignment="CENTER" spacing="10" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0">
+                    <Label text="XTR HOST" font="${titleFont}" style="-fx-font-weight: bold;"/>
+                    <Label text="by XtremeAlex" font="${authorFont}" style="-fx-font-style: italic;"/>
+                </VBox>
+
+                <ToggleButton fx:id="musicToggleButton" onAction="#handleMusicToggle" styleClass="music-toggle-button" selected="true" AnchorPane.topAnchor="20" AnchorPane.rightAnchor="20"/>
+            </AnchorPane>
+        </children>
+    </Pane>
+
+    <!-- Contenuto Principale -->
+    <AnchorPane fx:id="mainContent" visible="false">
+        <children>
+            <VBox alignment="TOP_CENTER" spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+                <Label text="XTR TOOLKIT HOST" styleClass="title-label" />
+            </VBox>
+
+            <ToggleButton fx:id="musicToggleButtonMain" onAction="#handleMusicToggle" styleClass="music-toggle-button" text="Musica" selected="true" AnchorPane.topAnchor="20" AnchorPane.rightAnchor="20"/>
+
+            <VBox fx:id="mainLayout" spacing="10" AnchorPane.topAnchor="100" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <HBox fx:id="editButtonsBox" alignment="CENTER_LEFT" spacing="10">
+                    <Button fx:id="modifyButton" text="Modifica" onAction="#handleModifyAction"/>
+                </HBox>
+                <ScrollPane fx:id="scrollPane" fitToWidth="true">
+                    <content>
+                        <VBox fx:id="appsContainer" spacing="10"></VBox>
+                    </content>
+                </ScrollPane>
+            </VBox>
+        </children>
+    </AnchorPane>
+</StackPane>
+        <?import com.jfoenix.controls.JFXToggleButton?>
+        <?import javafx.geometry.Insets?>
+        <?import javafx.scene.layout.AnchorPane?>
+        <?import javafx.scene.layout.StackPane?>
+        <?import javafx.scene.layout.VBox?>
+
+        <?import javafx.scene.text.Font?>
+        <?import javafx.scene.layout.Pane?>
+        <?import javafx.scene.control.Label?>
+        <?import javafx.scene.layout.HBox?>
+        <?import javafx.scene.control.ScrollPane?>
+        <?import javafx.scene.control.Button?>
+<StackPane fx:id="rootPane" xmlns="http://javafx.com/javafx/17.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xtremealex.toolkit.hosts.MainController">
+<!-- Definisci le risorse (font personalizzati) -->
+<fx:define>
+    <Font fx:id="titleFont" name="Arial" size="48"/>
+    <Font fx:id="authorFont" name="Arial" size="24"/>
+</fx:define>
+
+<!-- Splash Screen -->
+<Pane fx:id="splashScreen" prefWidth="640" prefHeight="860" styleClass="splash-screen">
+    <children>
+        <!-- Contenitore principale per centrare gli elementi -->
+        <AnchorPane prefWidth="640" prefHeight="860">
+            <!-- Titolo dell'Applicazione e Autore -->
+            <VBox alignment="CENTER" spacing="10" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0">
+                <Label text="XTR HOST" font="${titleFont}" style="-fx-font-weight: bold;"/>
+                <Label text="by XtremeAlex" font="${authorFont}" style="-fx-font-style: italic;"/>
+            </VBox>
+
+            <!-- Music Toggle Button usando JFXToggleButton -->
+            <JFXToggleButton fx:id="musicToggleButton" text="Musica" onAction="#handleMusicToggle" selected="true" AnchorPane.topAnchor="20" AnchorPane.rightAnchor="20"/>
+        </AnchorPane>
+    </children>
+</Pane>
+
+<!-- Contenuto Principale -->
+<AnchorPane fx:id="mainContent" visible="false">
+    <children>
+        <!-- Music Toggle Button nel Contenuto Principale -->
+        <JFXToggleButton fx:id="musicToggleButtonMain" text="Musica" onAction="#handleMusicToggle" selected="true" AnchorPane.topAnchor="20" AnchorPane.rightAnchor="20"/>
+
+        <VBox alignment="TOP_CENTER" spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+            <Label text="XTR HOST" styleClass="title-label" />
+        </VBox>
+
+        <!-- Layout principale con scroll pane -->
+        <VBox fx:id="mainLayout" spacing="10" AnchorPane.topAnchor="100" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <HBox fx:id="editButtonsBox" alignment="CENTER_LEFT" spacing="10">
+                <Button fx:id="modifyButton" text="Modifica" onAction="#handleModifyAction"/>
+            </HBox>
+            <ScrollPane fx:id="scrollPane" fitToWidth="true">
+                <content>
+                    <VBox fx:id="appsContainer" spacing="10">
+                        <!-- Segnaposto per il loading host-->
+                        <Label text="LOADING"/>
+                    </VBox>
+                </content>
+            </ScrollPane>
+        </VBox>
+    </children>
+</AnchorPane>
+</StackPane>
