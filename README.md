@@ -7,24 +7,38 @@
 
 # xtr-toolkit-hosts
 
-Applicazione desktop JavaFX per gestire e modificare il file `hosts` quando si lavora con molteplici host e ambienti.
+Quando lavori con decine di host sparsi fra applicazioni e ambienti diversi,
+tenere in ordine il file `hosts` a mano diventa scomodo e si sbaglia facilmente. xtr-toolkit-hosts è
+un'applicazione desktop JavaFX che raggruppa gli host per applicazione e
+ambiente e te li fa modificare da un'interfaccia grafica.
+
+> Stato: versione multipiattaforma di riferimento, non più sviluppata attivamente (ultime modifiche al codice nel 2024). Lo sviluppo attivo è in `xtr-toolkit-hosts-macos`.
 
 ## Info sul progetto
 
-Questo progetto nasce come piattaforma sperimentale personale per mettere alla prova tecnologie e framework moderni in un contesto realistico. Semplifica la modifica del file `hosts` raggruppando gli host per applicazione/ambiente tramite un'interfaccia grafica.
+È nato come mio banco di prova personale, per sperimentare tecnologie e
+framework moderni su un problema reale, ed è uno dei moduli di una serie più
+ampia che mi piacerebbe crescesse anche con i contributi della community.
 
-È uno dei moduli di una serie più ampia, pensata per essere condivisa e arricchita con il contributo della community.
+### Versione Java e versione macOS
 
-## Stack tecnologico
+Questa è la versione multipiattaforma (Linux, macOS, Windows). Da qui è nata
+[`xtr-toolkit-hosts-macos`](https://github.com/XtremeAlex/xtr-toolkit-hosts-macos),
+un'app nativa per Mac oggi molto più avanti: scrittura sicura di `/etc/hosts`
+con backup datati e ripristino, audit, gestione dei load balancer, politiche
+via MDM. Su Mac conviene usare quella; su Windows e Linux questa resta la
+versione di riferimento.
+
+## Stack
 
 - Java 17
 - JavaFX 21
 - Maven (jpackage)
 - Linux, macOS, Windows
 
-## Getting Started
-
-Il progetto usa Maven per la gestione delle dipendenze e la compilazione. È sviluppato con Java 17 e JavaFX e può essere avviato e testato in locale.
+## Per iniziare
+Il progetto usa Maven per dipendenze e build, ed è sviluppato con Java 17 e
+JavaFX: puoi avviarlo e provarlo in locale.
 
 ### Prerequisiti
 
@@ -91,7 +105,7 @@ Il progetto usa Maven per la gestione delle dipendenze e la compilazione. È svi
    cd xtr-toolkit-hosts
    ```
 
-2. Compila e crea l'eseguibile con jpackage (profilo per architettura):
+2. Compila e crea l'eseguibile con jpackage, scegliendo il profilo della tua piattaforma:
    ```bash
    # macOS (Apple Silicon)
    mvn clean package jpackage:jpackage -Pmac-aarch64
@@ -101,13 +115,15 @@ Il progetto usa Maven per la gestione delle dipendenze e la compilazione. È svi
    ```
    <img src="_assets/images/mvn-build.png" alt="Build Maven"/>
 
-3. L'eseguibile viene prodotto sotto `./target/jpackage`.
+3. Trovi l'eseguibile in `./target/jpackage`.
 
 ### Formato del file hosts
 
-Ricordarsi di inserire la stringa `##start-xtr-toolkit-host` nel file `hosts`: indica il punto da cui iniziare la lettura.
+L'app legge il file `hosts` a partire dalla riga `##start-xtr-toolkit-host`:
+ricordati di aggiungerla, tutto ciò che sta sopra viene ignorato.
 
-Gerarchia di esempio (usa placeholder al posto di host reali):
+Sotto il marcatore gli host si organizzano così (qui con segnaposto al posto
+di host reali):
 
 ```
 #TEST CLOUD
@@ -118,13 +134,13 @@ Gerarchia di esempio (usa placeholder al posto di host reali):
 
 ## Roadmap
 
-- [ ] Testare il tutto riportando i risultati
+- [ ] Testare il tutto e riportare i risultati
 
-Consulta le [open issues](https://github.com/XtremeAlex/xtr-toolkit-hosts/issues) per la lista completa di funzionalità proposte e bug noti.
+Nelle [open issues](https://github.com/XtremeAlex/xtr-toolkit-hosts/issues) trovi l'elenco completo delle funzionalità proposte e dei bug noti.
 
 ## Come contribuire
 
-I contributi sono ciò che rende la community open source un posto straordinario per imparare e creare. Ogni contributo è molto apprezzato.
+Ogni contributo è benvenuto.
 
 1. Fai un fork del progetto
 2. Crea il tuo feature branch (`git checkout -b feature/nome-feature`)
@@ -132,12 +148,11 @@ I contributi sono ciò che rende la community open source un posto straordinario
 4. Fai push sul branch (`git push origin feature/nome-feature`)
 5. Apri una Pull Request
 
-Se hai un suggerimento, apri pure una issue con il tag appropriato. E non dimenticare di mettere una stella al progetto!
+Hai un'idea? Apri pure una issue con il tag giusto. E se il progetto ti è utile, lascia una stella.
 
-## License
-
+## Licenza
 Distribuito sotto licenza Apache 2.0. Vedi il file [`LICENSE`](LICENSE) per i dettagli.
 
 ## Contatti
 
-Andrei Alexandru Dabija — [LinkedIn](https://www.linkedin.com/in/andrei-alexandru-dabija/) — [github.com/XtremeAlex](https://github.com/XtremeAlex)
+Andrei Alexandru Dabija · [LinkedIn](https://www.linkedin.com/in/andrei-alexandru-dabija/) · [github.com/XtremeAlex](https://github.com/XtremeAlex)
